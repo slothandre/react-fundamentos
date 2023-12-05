@@ -1,0 +1,44 @@
+/* Folha de Estilos GLOBAL
+Será usada por elementos em todos os componentes
+da aplicação React */
+
+/* Ajuste do Box Model com box-sizing */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Reset */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Segoe UI", Arial;
+}
+
+/* Bloco/Box */
+.sombra {
+  box-shadow: red 0 0 10px;
+  background-color: white;
+}
+
+.destaque-texto {
+  background-color: yellow;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.centralizar {
+  text-align: center;
+}
