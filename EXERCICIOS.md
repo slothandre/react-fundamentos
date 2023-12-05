@@ -1,5 +1,16 @@
 # Exercícios
 
+## Branch 06-props
+
+1. Crie um array simples/numérico com a data de lançamento de cada livro (invente!)
+
+2. Passe através de uma nova `prop` chamada `data` para o componente `<Artigo>` (na mesma sequência que está feito no array).
+
+3. No componente `<Artigo>` receba esta data e a mostre
+   em uma tag `<time>` logo após a descrição.
+
+---
+
 ## Branch 05-styled-components
 
 ### 1) Componente Artigo.jsx
