@@ -27,6 +27,8 @@ const StyledConteudo = styled.main`
 `;
 
 function Conteudo() {
+  const datas = ["10/10/1954", "01/01/1995", "15/12/2012"];
+
   return (
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
@@ -39,9 +41,24 @@ function Conteudo() {
       </p>
 
       <div className="artigos">
-        <Artigo />
-        <Artigo />
-        <Artigo />
+        <Artigo
+          data={datas[0]}
+          icone="🎃"
+          titulo="Senhor dos Anéis"
+          descricao="Livro criado por Tokien"
+        />
+        <Artigo
+          data={datas[1]}
+          icone="🎨"
+          titulo="Game Of Thrones"
+          descricao="Aventura maluca com gente sempre morrendo"
+        />
+        <Artigo
+          data={datas[2]}
+          icone="💎"
+          titulo="HTML5 e CSS3"
+          descricao="Fonte de estudos para quem quer começar no Front-End"
+        />
       </div>
     </StyledConteudo>
   );
