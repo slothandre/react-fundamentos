@@ -34,6 +34,7 @@ function Artigo(props) {
       <p>
         Lançamento: <time>{props.data}</time>
       </p>
+      {props.children}
     </StyledArtigo>
   );
 }
