@@ -2,6 +2,10 @@
 import Artigo from "./Artigo";
 import styled from "styled-components";
 
+import imagem1 from "../assets/abra-o-livro.png";
+import imagem2 from "../assets/livro-magico.png";
+import imagem3 from "../assets/pilha-de-livros.png";
+
 const StyledConteudo = styled.main`
   width: 90vw;
   margin: 1rem auto;
@@ -33,6 +37,7 @@ function Conteudo() {
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
 
+      <img src="" alt="" />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
         labore? Officia quae quo a quas excepturi distinctio sint voluptas
@@ -42,18 +47,21 @@ function Conteudo() {
 
       <div className="artigos">
         <Artigo
+          imagem={imagem1}
           data={datas[0]}
           icone="🎃"
           titulo="Senhor dos Anéis"
           descricao="Livro criado por Tokien"
         />
         <Artigo
+          imagem={imagem2}
           data={datas[1]}
           icone="🎨"
           titulo="Game Of Thrones"
           descricao="Aventura maluca com gente sempre morrendo"
         />
         <Artigo
+          imagem={imagem3}
           data={datas[2]}
           icone="💎"
           titulo="HTML5 e CSS3"
