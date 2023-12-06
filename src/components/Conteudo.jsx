@@ -51,12 +51,20 @@ function Conteudo() {
   const exemplo2 = () => {
     alert("Exemplo 2");
   };
+  const exemplo3 = () => {
+    alert("Exemplo 3");
+  };
 
   return (
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
 
       <button onClick={exemplo2}>Exemplo 2</button>
+
+      <br />
+      <button onClick={exemplo3}>
+        Exemplo 3 (Acionando o evento/função através do Conteudo (pai))
+      </button>
 
       <img src="" alt="" />
       <p>
