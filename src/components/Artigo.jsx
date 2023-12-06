@@ -29,7 +29,10 @@ function Artigo(props) {
   };
   return (
     <StyledArtigo>
-      <h3>{props.categoria}</h3>
+      {/* O Componente filho (Artigo) recebe
+      através da prop 'aoClicar' a referência à
+      função exemplo 3 existente no componente pai (Conteudo) */}
+      <h3 onClick={props.aoClicar}>{props.categoria}</h3>
       <p>
         <b>Curso: </b>
         {props.nome}
