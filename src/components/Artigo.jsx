@@ -21,6 +21,12 @@ const StyledArtigo = styled.article`
 
 /* Definindo props para o componente */
 function Artigo(props) {
+  const formataPreco = (valor) => {
+    return valor.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  };
   return (
     <StyledArtigo>
       <h3>{props.categoria}</h3>
@@ -30,10 +36,7 @@ function Artigo(props) {
       </p>
       <p>
         <b>Preço: </b>
-        {props.preco.toLocaleString("pt-br", {
-          style: "currency",
-          currency: "BRL",
-        })}
+        {formataPreco(props.preco)}
       </p>
     </StyledArtigo>
   );
