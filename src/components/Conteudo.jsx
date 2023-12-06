@@ -62,8 +62,12 @@ function Conteudo() {
       <button onClick={exemplo2}>Exemplo 2</button>
 
       <br />
-      <button onClick={exemplo3}>
-        Exemplo 3 (Acionando o evento/função através do Conteudo (pai))
+      <button
+        onClick={() => {
+          exemplo3("Estou com o Pai");
+        }}
+      >
+        Exemplo 3 (Acionando o evento/função através do Conteudo [pai])
       </button>
 
       <img src="" alt="" />
