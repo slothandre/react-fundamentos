@@ -4,6 +4,26 @@ import Menu from "./Menu";
 /* Importação da lib Styled Components */
 import styled from "styled-components";
 
+function Cabecalho() {
+  return (
+    <StyledCabecalho>
+      {/* Propriedade de evento que executará, após o clique,
+      uma função intermediária que fará ações (chamar outras funções,
+      executar outros processos etc) */}
+      <h1
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          alert("Exemplo 1");
+        }}
+      >
+        Olá React! 😎
+      </h1>
+      <hr />
+      <Menu />
+    </StyledCabecalho>
+  );
+}
+
 const StyledCabecalho = styled.header`
   background-color: black;
   color: white;
@@ -19,15 +39,5 @@ const StyledCabecalho = styled.header`
     margin: 8px auto;
   }
 `;
-
-function Cabecalho() {
-  return (
-    <StyledCabecalho>
-      <h1>Olá React! 😎</h1>
-      <hr />
-      <Menu />
-    </StyledCabecalho>
-  );
-}
 
 export default Cabecalho;
