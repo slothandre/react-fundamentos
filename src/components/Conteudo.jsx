@@ -2,10 +2,20 @@
 import Artigo from "./Artigo";
 import styled from "styled-components";
 import cursos from "../api/cursos";
+import { useState } from "react";
 
 function Conteudo() {
+  /* Criando um gerenciador de state para mudança/filtro
+  de categorias. Inicialmente, começa como null pois ainda não
+  temos uma escolha/seleção de categoria (aparece tudo) */
+  const [categoria, setCategoria] = useState(null);
+
   const aplicarFiltro = (event) => {
-    console.log(event.currentTarget.innerText);
+    // Capturamos (após o clique) o texto escrito em cada botão
+    const categoriaEscolhida = event.currentTarget.innerText;
+
+    // E em seguida passamos este texto para o state de categoria
+    setCategoria(categoriaEscolhida);
   };
 
   return (
@@ -27,6 +37,15 @@ function Conteudo() {
           <button onClick={aplicarFiltro}>Back-End</button>
           <button onClick={aplicarFiltro}>Design</button>
         </p>
+        {/* Renderização Condicional
+        O texto/tag/componente somente será renderizado/exibido
+        se o state categoria existir (ou seja, não é
+        null, undefinided, false) */}
+        {categoria && (
+          <p>
+            Você escolheu: <b>{categoria}</b>
+          </p>
+        )}
       </div>
 
       <div className="artigos">
@@ -60,6 +79,11 @@ const StyledConteudo = styled.main`
     padding: 1rem 0;
     border-top: solid 2px;
     border-bottom: solid 2px;
+  }
+
+  .filtros button {
+    margin: 0.5rem;
+    font-size: 1.1rem;
   }
 
   @media screen and (min-width: 650px) {
