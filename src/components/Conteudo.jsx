@@ -32,6 +32,9 @@ function Conteudo() {
     return curso.categoria === categoria || categoria === null;
   });
 
+  /* Guardando a quantidade de cursos filtrados */
+  const quantidade = cursosFiltrados.length;
+
   return (
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
@@ -51,10 +54,12 @@ function Conteudo() {
           <button onClick={aplicarFiltro}>Back-End</button>
           <button onClick={aplicarFiltro}>Design</button>
           <button onClick={aplicarFiltro}>Mobile</button>
+          <button onClick={aplicarFiltro}>Gastronomia</button>
           {categoria && (
             <button onClick={limparFiltro}>🧹 Limpar filtro</button>
           )}
         </p>
+        <p>Quantidade de cursos: {quantidade}</p>
         {/* Renderização Condicional
         O texto/tag/componente somente será renderizado/exibido
         se o state categoria existir (ou seja, não é
@@ -62,6 +67,11 @@ function Conteudo() {
         {categoria && (
           <p>
             Você escolheu: <b>{categoria}</b>
+          </p>
+        )}
+        {quantidade === 0 && (
+          <p style={{ color: "red", textAlign: "center" }}>
+            Não há notícias desta categoria!
           </p>
         )}
       </div>
