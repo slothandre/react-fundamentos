@@ -18,6 +18,16 @@ function Conteudo() {
     setCategoria(categoriaEscolhida);
   };
 
+  /* Gerando um novo array de cursos filtrados */
+  const cursosFiltrados = cursos.filter((curso) => {
+    /* Se o state categoria for igual a uma
+    das categorias dos cursos, então será retornada
+    a lista de cursos daquela categoria. Senão, será
+    retornada lista completa devido ao state ser null (ou seja,
+    não há uma categoria para filtrar) */
+    return curso.categoria === categoria || categoria === null;
+  });
+
   return (
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
@@ -36,6 +46,7 @@ function Conteudo() {
           <button onClick={aplicarFiltro}>Front-End</button>
           <button onClick={aplicarFiltro}>Back-End</button>
           <button onClick={aplicarFiltro}>Design</button>
+          <button onClick={aplicarFiltro}>Mobile</button>
         </p>
         {/* Renderização Condicional
         O texto/tag/componente somente será renderizado/exibido
@@ -49,7 +60,7 @@ function Conteudo() {
       </div>
 
       <div className="artigos">
-        {cursos.map((curso) => (
+        {cursosFiltrados.map((curso) => (
           <Artigo
             key={curso.id}
             nome={curso.titulo}
