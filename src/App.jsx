@@ -5,16 +5,23 @@ import Contato from "./pages/Contato";
 import Rodape from "./components/Rodape";
 import Container from "./components/Container";
 
+/* Importação de recursos/componentes do React Router */
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <>
-      <Cabecalho />
-      <Container>
-        <Home />
-        <Produtos />
-        <Contato />
-      </Container>
-      <Rodape />
+      <BrowserRouter>
+        <Cabecalho />
+        <Container>
+          <Routes>
+            <Route Component={Home} exact path="/" />
+            <Route Component={Produtos} path="/produtos" />
+            <Route Component={Contato} path="/contato" />
+          </Routes>
+        </Container>
+        <Rodape />
+      </BrowserRouter>
     </>
   );
 }
