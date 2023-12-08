@@ -18,6 +18,11 @@ const StyledMenu = styled.nav`
   justify-content: space-evenly;
   align-items: center;
 
+  .active {
+    background-color: white;
+    color: black;
+  }
+
   a {
     color: white;
     text-decoration: none;
